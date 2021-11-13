@@ -10,15 +10,15 @@
 ```
 D11 <-150 Oh-> OUT (Longer electrode)
 GND <--------> GND (Shorter)
-```
-<img src="transmitter.jpg"></img> 
-### Decoded IR signal from the original projector remote 
-* In receiver part of this project, we have following result:
+```  
+<img src="../../misc/ir_transmitter.jpg"></img>   
+### Decoded IR signal emiited from the original projector remote 
+* In [receiver](../receiver/) part of this project, we have following result:
 ``` 
 20:25:00.723 -> Protocol=7 Address=0xF483 Command=0x17 Raw=0xE817F483 
 ```
-* It means the original projector remote use NEC protocol send command 0x17 to address 0xF483. 
-* It tells projector to power off. 
+* Protocol=7 means the original projector remote use NEC protocol send command 0x17 to address 0xF483. 
+* 0x17 tells projector to power off. 
 * We can clone this ir signal and use an ir led to control projector
 ### Command explanation 
 After we decoded one ir signal, we know the command is 0x17. It is a hex. How do we send 0x17 over http to the board? We convert the hex (0x17) to decimal (23) before http request, then cast the string "23" back to integer 23 after http.
@@ -47,7 +47,7 @@ void setup() {
 uint16_t sAddress = 0xF483; // uint16_t sAddress = atoi("62595");
 uint8_t sRepeats = 0;
 void loop() {
-    uint8_t sCommand = 0x28; 
+    uint8_t sCommand = 0x17; 
     IrSender.sendNEC(sAddress, sCommand, sRepeats);
     // IrSender.sendNECRaw(0xD728F483, sRepeats); 
     delay(3600*1000);
@@ -55,7 +55,7 @@ void loop() {
 ```
 ### Http Server + Transmitter
 * [transmitter.ino](transmitter.ino) is the code 
-* As the code runs on WiFi Soc, a http server runs on WLAN.
+* As the code runs on WiFi-enabled Soc, a http server runs on WLAN.
 * Use GET method to tell WiFi Soc what command we want it to send.
 ```
 import requests 
