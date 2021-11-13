@@ -6,6 +6,8 @@
 * Reception Distance up to 18m
 * Lead Pitch: 2.54mm 
 #### Wiring ([Good Ref](https://arduino.stackexchange.com/questions/3926/using-vs1838b-with-arduino))
+<img src="../../misc/VS1838B.png" />
+
 * Resistor is not needed.
 ```
 OUT <--> D11 (digital pin not A11/Analog Pin 11) 
