@@ -1,12 +1,10 @@
-### Use receiver VS1838B([Amazon](https://www.amazon.com/gp/product/B06XYNDRGF/)) to decode remote signal
+### VS1838B ([Amazon](https://www.amazon.com/gp/product/B06XYNDRGF/)): IR Receiver
 #### Receiver Specifications:
 * Operating Voltage: 2.7 – 5.5vDC
 * Infrared Frequency: 38kHz 1838 NEC Code
 * Reception Angle: ~45 Degrees
 * Reception Distance up to 18m
-* Lead Pitch: 2.54mm
-#### Pic
-![alt text](VS1838B.png "VS1838B")
+* Lead Pitch: 2.54mm 
 #### Wiring ([Good Ref](https://arduino.stackexchange.com/questions/3926/using-vs1838b-with-arduino))
 * Resistor is not needed.
 ```
