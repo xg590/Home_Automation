@@ -1,4 +1,10 @@
 ## Home Automation
+### Tech list
+* Flask-backed APIs 
+  * Smart bulb control
+  * ESP8266 control
+  * Motion detection
+* Infrared signal decoding and encoding
 ### Gallery
 <table>
   <tr> 
