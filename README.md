@@ -1,33 +1,56 @@
 ## Home Automation
-### Materials
-* ESP8266 + Sensors
+### Gallery
+<table>
+  <tr> 
+    <th>Hub-Raspberry Pi 3A</th> 
+    <th>IR Receiver-VS1838B</th> 
+    <th> TV remote</th>  
+  </tr>
+  <tr> 
+    <td>  </td> 
+    <td> <img width="240px" height="200px" src="misc/ir_receiver.jpg" /> </td> 
+    <td> <img width="120px" height="320px" src="misc/tv_remotre.jpg" /> </td>
+  </tr>
+  <tr> 
+    <th>8 Channel Relay</th> 
+    <th> Ceiling Light Switch-SG90</th> 
+    <th> TP_Link-LB110 </td> 
+  </tr>
+  <tr> 
+    <td> <img width="450px" height="300px" src="misc/relay_8ch.jpg" /> </td> 
+    <td> <img width="240px" height="300px" src="misc/ceiling_light_switch.jpg" /> </td> 
+    <td> <img width="150px" height="300px" src="misc/lb110.jpg" </td> 
+  </tr>
+  <tr>
+    <th> </th> 
+    <th>Environmental Sensor-SHT4x</th> 
+    <th> </th> 
+  </tr> 
+  <tr> 
+    <td> </td> 
+    <td> <img width="250px" height="300px" src="misc/sht4x.jpg" /> </td> 
+    <td> </td> 
+  </tr> 
+</table>
+
+### Material List
+* Hub + Camera
+  * Raspberry Pi 3A
+  *  
+* IR Receiver
   * D1 mini
-  * Photoelectric resistor
-  * SHT4x temperature/humidity sensor 
-* Remote (New)
-  * TV remote 
-  * D1 mini
-  * VS1838B (InfraRed receiver)
-* ESP8266 Remote (Old)
-  * D1 mini
-  * D1 mini's oled shield, battery shiled
-  * Tactile switches
-* ESP8266 Relay
-  * D1 mini
+  * VS1838B
+* TV remote
+* 8 Channel Relay
   * Relay
-* ESP8266 Servo
+  * Homemade adapter
   * D1 mini
-  * SG90
-* Raspberry Pi 3A
-* TP-Link HS105 WiFi-enabled power plug
+* Ceiling Light Switch
+  * D1 mini
+  * SG90 Servo
+  * Homemade adapter  
 * TP-Link LB110 WiFi-enabled light bulb
-### Role Assignment
-* D1 with sensors reports Luminance/Temperature/Humidity to a web server running on Raspberry Pi 3A
-<img src="sensor/sensor.jpg"></img>
-* D1 with infrared sensor convert IR signal to HTTP request over WiFi.
-<img src="remote/remote.jpg"></img>
-* Server monitors the temperature and fetches sunrise/sunset data to turn on/off (A/C plugged) power plug and light bulb
-* Bring WiFi to a relay that controlling a USB port 
-<img src="relay/relay.jpg"></img>
-* Control a light switch  
-<img src="light_switch/Control_a_Light_Switch.png"></img>
+* Environmental Sensor
+  * D1 mini 
+  * Photoelectric resistor
+  * SHT4x temperature/humidity sensor  
