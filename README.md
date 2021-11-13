@@ -1,9 +1,8 @@
 ## Home Automation
 ### Tech list for this project
-* Familar with C / Python / MicroPython Language
-* Socket / Multithread Programming
-* Programming on embedded system
-* Web development (API, frontend/backend, Websocket, etc.)
+* C / MicroPython programming for embedded system
+* Python programming for Backend development (API, socket, websocket, multithreading, etc.)
+* IR / PIR / Enviromental sensors, servo, relay, MOSFET
 ### Component Gallery
 <table>
   <tr> 
