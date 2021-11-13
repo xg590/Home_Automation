@@ -1,11 +1,10 @@
 ## Home Automation
-### Tech list
-* Flask-backed APIs 
-  * Smart bulb control
-  * ESP8266 control
-  * Motion detection
-* Infrared signal decoding and encoding
-### Gallery
+### Tech list for this project
+* Familar with C / Python / MicroPython Language
+* Socket / Multithread Programming
+* Programming on embedded system
+* Web development (API, frontend/backend, Websocket, etc.)
+### Component Gallery
 <table>
   <tr> 
     <th>Hub-Raspberry Pi 3A</th> 
