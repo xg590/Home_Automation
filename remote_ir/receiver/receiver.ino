@@ -2,7 +2,7 @@
 cat << EOF > /etc/wifi_secret.h
 #define STASSID "wifi_ssid"
 #define STAPSK  "wifi_passwd"
-#define URL "http://192.168.10.10:13000/ir"
+#define URL "http://192.168.x.x:x/ir"
 EOF
 */  
 #include "/etc/wifi_secret.h" 
@@ -12,9 +12,12 @@ EOF
 WiFiClient client;
 HTTPClient http; 
 
-const int IR_RECEIVE_PIN = D4; 
+const int IR_RECEIVE_PIN = D2; 
 
 void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
+
   Serial.begin(9600);
   Serial.print("[WiFi] Connecting."); 
   WiFi.begin(STASSID, STAPSK); 
@@ -33,7 +36,6 @@ void setup() {
 void send_over_http(char *json_str) {    
   if (WiFi.status() == WL_CONNECTED) { 
     Serial.println("[WiFi] Preparing HTTP Request"); 
-  
     if (http.begin(client, URL)) { 
       http.addHeader("Content-Type", "application/json"); 
       int httpCode = http.POST(json_str);  
@@ -50,6 +52,8 @@ void send_over_http(char *json_str) {
 
 void loop() {
   if (IrReceiver.decode()) {
+    digitalWrite(LED_BUILTIN, LOW);
+
     Serial.print("[IR] ");   
     if (IrReceiver.decodedIRData.protocol == UNKNOWN) {
       Serial.println("{\"err\":1}");
@@ -59,6 +63,8 @@ void loop() {
       Serial.println(json); 
       send_over_http(json);
     } 
+    
+    digitalWrite(LED_BUILTIN, HIGH);
     IrReceiver.resume(); // Enable receiving of the next value
   }
 }
