@@ -6,12 +6,12 @@
 ### Component Gallery
 <table>
   <tr> 
-    <th>Hub-Raspberry Pi 3A</th> 
+    <th>Hub-Raspberry Pi 3A + Camera</th> 
     <th>IR Receiver-VS1838B</th> 
     <th> TV remote</th>  
   </tr>
   <tr> 
-    <td>  </td> 
+    <td> <img width="400px" height="300px" src="misc/hub.jpg" /> </td> 
     <td> <img width="240px" height="200px" src="misc/ir_receiver.jpg" /> </td> 
     <td> <img width="120px" height="320px" src="misc/tv_remotre.jpg" /> </td>
   </tr>
@@ -40,7 +40,7 @@
 ### Material List
 * Hub + Camera
   * Raspberry Pi 3A
-  *  
+  * CSI interface Camera
 * IR Receiver
   * D1 mini
   * VS1838B
