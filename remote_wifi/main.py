@@ -19,10 +19,16 @@ def do_connect():
         pass
     else:
         sta_if.active(True)
+        oled.fill(0) 
+        oled.text('Connecting~',  0,  20, 1)  
+        oled.show() 
         print('connecting to network...')
         sta_if.connect(js['ssid'], js['psk'])
         while not sta_if.isconnected():
-            pass
+            pass 
+    oled.fill(0) 
+    oled.text('Connected~',  0,  20, 1)  
+    oled.show()  
     print('network config:', sta_if.ifconfig())
 
 def welcome():
@@ -44,14 +50,12 @@ do_connect()
 welcome() 
 
 from machine import Pin 
-from time import sleep  
-   
-Pin( 0, Pin.IN).irq(trigger=Pin.IRQ_FALLING, handler = lambda pin: remote.set_pin( 0) )  
-Pin( 2, Pin.IN).irq(trigger=Pin.IRQ_FALLING, handler = lambda pin: remote.set_pin( 2) )   
-Pin(12, Pin.IN).irq(trigger=Pin.IRQ_FALLING, handler = lambda pin: remote.set_pin(12) )   
-Pin(13, Pin.IN).irq(trigger=Pin.IRQ_FALLING, handler = lambda pin: remote.set_pin(13) )    
-Pin(14, Pin.IN).irq(trigger=Pin.IRQ_FALLING, handler = lambda pin: remote.set_pin(14) )   
-Pin(15, Pin.IN).irq(trigger=Pin.IRQ_RISING,  handler = lambda pin: remote.set_pin(15) )   
+from time import sleep   
+ 
+Pin(12, Pin.IN,Pin.PULL_UP).irq(trigger=Pin.IRQ_FALLING, handler = lambda pin: remote.set_pin(12) )
+Pin(13, Pin.IN,Pin.PULL_UP).irq(trigger=Pin.IRQ_FALLING, handler = lambda pin: remote.set_pin(13) )
+Pin(14, Pin.IN,Pin.PULL_UP).irq(trigger=Pin.IRQ_FALLING, handler = lambda pin: remote.set_pin(14) )
+                                   
 
 class REMOTE():
     count = 0
@@ -68,7 +72,7 @@ while 1:
 
     s = socket.socket()
     s.connect((js['hub_ip'], js['hub_port']))
-    req = 'GET /remote?pin=%d HTTP/1.0\r\nHost: foo\r\n\r\nbar' % (remote.pin_pressed, )
+    req = 'GET /wr?pin=%d HTTP/1.0\r\nHost: foo\r\n\r\nbar' % (remote.pin_pressed, )
     s.send(req.encode())
     first_line = s.readline()
     protocol, return_code, message = first_line.split(b' ', 2) 
@@ -99,3 +103,4 @@ while 1:
     oled.show() 
     remote.pin_pressed = None
     print('End of one loop')
+
