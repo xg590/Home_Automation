@@ -33,7 +33,7 @@
   <tr> 
     <td> </td> 
     <td> <img width="250px" height="300px" src="misc/sht4x.jpg" /> </td> 
-    <td> </td> 
+    <td> <img width="150px" height="300px" src="misc/wifi_remote.jpg" /> </td>  
   </tr> 
 </table>
 
