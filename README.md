@@ -26,12 +26,12 @@
     <td> <img width="150px" height="300px" src="misc/lb110.jpg" </td> 
   </tr>
   <tr>
-    <th> </th> 
+    <th>TP_Link-HS105</th> 
     <th>Environmental Sensor-SHT4x</th> 
-    <th> </th> 
+    <th>A Vanila Remote</th> 
   </tr> 
-  <tr> 
-    <td> </td> 
+  <tr>  
+    <td> <img width="250px" height="130px" src="misc/hs105.jpg" /> </td> 
     <td> <img width="250px" height="300px" src="misc/sht4x.jpg" /> </td> 
     <td> <img width="150px" height="300px" src="misc/wifi_remote.jpg" /> </td>  
   </tr> 
