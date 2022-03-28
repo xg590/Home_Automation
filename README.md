@@ -31,7 +31,7 @@
     <th>A Vanila Remote</th> 
   </tr> 
   <tr>  
-    <td> <img width="250px" height="130px" src="misc/hs105.jpg" /> </td> 
+    <td> <img width="300px" height="215px" src="misc/hs105.jpg" /> </td> 
     <td> <img width="250px" height="300px" src="misc/sht4x.jpg" /> </td> 
     <td> <img width="150px" height="300px" src="misc/wifi_remote.jpg" /> </td>  
   </tr> 
@@ -54,6 +54,7 @@
   * SG90 Servo
   * Homemade adapter  
 * TP-Link LB110 WiFi-enabled light bulb
+* TP-Link HS150 WiFi-enabled power plug
 * Environmental Sensor
   * D1 mini 
   * Photoelectric resistor
